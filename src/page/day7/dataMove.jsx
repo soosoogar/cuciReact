@@ -13,6 +13,10 @@ export default function DataMove() {
             <input type="button" id="count" value="카운트 증가" onClick={e=>{
                 setCount(count + 1);
             }}/>
+            <Child3 fnStudy={(val)=>{
+                alert('자식에게서 호출');
+                alert(val);
+            }}/>
         </>
     )
 } 
@@ -21,7 +25,7 @@ function Child(props) {
         <div style={{
             width: '50vw',
             height: '50vh',
-            border: '1px solid black'
+            border: '2px solid blue'
         }}>
             <h3>자식 컴포넌트 </h3>
             {props.datMsg}<br/>
@@ -34,10 +38,26 @@ function Child2(props){
         <div style={{
             width: '50vw',
             height: '50vh',
-            border: '1px solid black'
+            border: '2px solid red'
         }}>
             <h3>자식2 컴포넌트</h3>
             카운트: {props.dataCount}
+        </div>
+    )
+}
+
+function Child3(props){
+    return (
+        <div style={{
+            width: '50vw',
+            height: '50vh',
+            border: '2px solid green'
+        }}>
+            <h3>자식3 컴포넌트</h3>
+            <input type="button" value="부모 호출"
+            onClick={()=>{
+                props.fnStudy('1234');
+            }}/>
         </div>
     )
 }
