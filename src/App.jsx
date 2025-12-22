@@ -5,6 +5,7 @@ import Dark from './page/Dark.jsx';
 import StudentInfo from './page/StudentInfo.jsx';
 import DataMove from './page/day7/dataMove.jsx';
 import BordList from './page/day7/boardlist.jsx';
+import Axios보내기1 from './page/axios/Axios보내기.jsx';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path={'/studentinfo'} element={<StudentInfo />} />
         <Route path={'/datamove'} element={<DataMove />} />
         <Route path={'/boardlist'} element={<BordList />} />
+        <Route path={'/Axios보내기'} element={<Axios보내기1 />} />
       </Routes>
       </BrowserRouter>
     </>
